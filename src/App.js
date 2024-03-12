@@ -26,7 +26,7 @@ function App() {
     const [image, setImage] = useState()
     const [teams, setTeams] = useState([])
 
-
+console.log('teams==========', teams)
     const handleUpload = (e) => {
         const formdata = new FormData()
         formdata.append('file', file)
