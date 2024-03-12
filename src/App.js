@@ -30,13 +30,13 @@ function App() {
     const handleUpload = (e) => {
         const formdata = new FormData()
         formdata.append('file', file)
-        axios.post('http://localhost:8080/upload', formdata)
+        axios.post('https://node-deploy-vercel-seven.vercel.app/upload', formdata)
         .then(res => setImage(res.data.image))
         .catch(err => console.log(err))
     }
 
     const handleGet = (e) => {
-        axios.get('http://localhost:8080/getallTeam')
+        axios.get('https://node-deploy-vercel-seven.vercel.app/getallTeam')
         .then(res => {
             console.log(res.data, "========");
             setTeams(res.data)
@@ -50,7 +50,7 @@ function App() {
                 <input type='file' onChange={e => setFile(e.target.files[0])}/>
                 <button onClick={handleUpload}>Upload</button>
                 <br/><br/><br/>
-                <img src={`http://localhost:8080/Images/` + image}  alt='' />
+                <img src={`https://node-deploy-vercel-seven.vercel.app/Images/` + image}  alt='' />
             </div>
             <br/><br/><br/><br/>
             <div>
