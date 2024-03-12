@@ -36,7 +36,7 @@ function App() {
     }
 
     const handleGet = (e) => {
-        axios.get('https://node-deploy-vercel-seven.vercel.app/getallTeam')
+        axios.get('http://localhost:8080/getallTeam')
         .then(res => {
             console.log(res.data, "========");
             setTeams(res.data)
