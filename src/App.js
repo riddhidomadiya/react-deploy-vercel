@@ -69,7 +69,7 @@ function App() {
     formData.append('image', file);
 
     try {
-      const response = await axios.post('http://localhost:1000/upload', formData, {
+      const response = await axios.post('https://mern-deploy-test-theta.vercel.app/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -85,7 +85,7 @@ function App() {
       <input type="file" onChange={e => setFile(e.target.files[0])} />
       <button onClick={handleUpload}>Upload</button>
       <br />
-      {image && <img src={`http://localhost:1000/uploads/${image}`} alt="Uploaded" />}
+      {image && <img src={`https://mern-deploy-test-theta.vercel.app/uploads/${image}`} alt="Uploaded" />}
     </div>
   );
 }
