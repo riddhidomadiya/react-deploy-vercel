@@ -12,7 +12,7 @@ function App() {
         const formdata = new FormData()
         formdata.append('file', file)
         // axios.post('http://localhost:1000/upload', formdata, {
-        axios.post('https://mern-deploy-test-theta.vercel.app/upload', formdata, {
+        axios.post('https://node-deploy-vercel-steel.vercel.app/upload', formdata, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -22,7 +22,7 @@ function App() {
     }
 
     const handleGet = (e) => {
-        axios.get('https://mern-deploy-test-theta.vercel.app/userall')
+        axios.get('https://node-deploy-vercel-steel.vercel.app/userall')
         .then(res => {
             console.log(res.data, "========");
             setTeams(res.data)
@@ -36,7 +36,7 @@ function App() {
                 <input type='file' onChange={e => setFile(e.target.files[0])}/>
                 <button onClick={handleUpload}>Upload</button>
                 <br/><br/><br/>
-                <img src={`https://mern-deploy-test-theta.vercel.app/uploads/${image}`}  alt='' />
+                <img src={`https://node-deploy-vercel-steel.vercel.app/uploads/${image}`}  alt='' />
             </div>
             <br/><br/><br/><br/>
             <div>
