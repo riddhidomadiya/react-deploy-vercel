@@ -17,14 +17,15 @@ function App() {
                 'Content-Type': 'multipart/form-data'
             }
         })
-        .then(res => setImage(res.data.image))
+        .then(res => {
+            setImage(res.data.imageUrl)
+        })
         .catch(err => console.log(err))
     }
 
     const handleGet = (e) => {
         axios.get('https://node-deploy-vercel-steel.vercel.app/userall')
         .then(res => {
-            console.log(res.data, "========");
             setTeams(res.data)
         })
         .catch(err => console.log(err))
@@ -36,7 +37,7 @@ function App() {
                 <input type='file' onChange={e => setFile(e.target.files[0])}/>
                 <button onClick={handleUpload}>Upload</button>
                 <br/><br/><br/>
-                <img src={`https://node-deploy-vercel-steel.vercel.app/uploads/${image}`}  alt='' />
+                <img src={`${image}`}  alt='' />
             </div>
             <br/><br/><br/><br/>
             <div>
